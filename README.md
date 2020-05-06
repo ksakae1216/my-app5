@@ -6,6 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `ng update @angular/cli@8 @angular/core@8`
 
+## Angular update 8.2 to 9.0
+
+`ng update`
+
+`ng update @angular/core@8 @angular/cli@8`
+
 
 ## Development server
 
