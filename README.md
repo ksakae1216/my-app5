@@ -12,6 +12,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `ng update @angular/core@8 @angular/cli@8`
 
+`ng update @angular/core @angular/cli`
+
 
 ## Development server
 
