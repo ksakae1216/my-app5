@@ -6,6 +6,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `ng update @angular/cli@8 @angular/core@8`
 
+## Angular update 8.2 to 9.0
+
+`ng update`
+
+`ng update @angular/core@8 @angular/cli@8`
+
+`ng update @angular/core @angular/cli`
+
 
 ## Development server
 
@@ -30,3 +38,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Screen Creation Procedure
+
+### login
+
+`ng generate component login`
