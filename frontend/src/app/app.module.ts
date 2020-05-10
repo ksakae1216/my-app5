@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { LoginComponent } from 'frontend/src/app/libs/content/login/login.component';
 import { ListComponent } from 'frontend/src/app/libs/content/list/list.component';
 
+import { HttpListService } from 'frontend/src/app/libs/service/http-list.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,7 @@ import { ListComponent } from 'frontend/src/app/libs/content/list/list.component
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     MatToolbarModule,
@@ -39,7 +43,7 @@ import { ListComponent } from 'frontend/src/app/libs/content/list/list.component
     MatTableModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HttpListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
