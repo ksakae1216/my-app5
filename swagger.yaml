@@ -1,0 +1,172 @@
+swagger: "2.0"
+info:
+  description: "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  version: "1.0.0"
+  title: "Swagger Petstore"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+tags:
+- name: "engineer"
+  description: "Engineer Data"
+- name: "cluster"
+
+schemes:
+#- "https"
+- "http"
+paths:
+  /engineer:
+    post:
+      tags:
+        - "engineer"
+      summary: "add engineer data"
+      description: "engineer list"
+      operationId: "addEngineer"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Engineer object that needs to be added to the store"
+          required: true
+          schema:
+            $ref: "#/definitions/Engineer"
+      responses:
+        "200":
+          description: "successful add engineer data"
+          schema:
+            $ref: "#/definitions/Engineer"
+        "405":
+          description: "Invalid input"
+    get:
+      tags: 
+        - "engineer"
+      summary: "get all engineer data"
+      description: ""
+      operationId: "getEngineer"
+      produces:
+        - "application/json"
+        - "application/xml"
+      responses:
+        "200":
+          description: "successful get"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+              default: "*"
+          schema:
+            example:
+              - id: 1
+                name: "sato"
+                skill: "A"
+                status: "Working"
+              - id: 2
+                name: "kato"
+                skill: "S"
+                status: "Empty"
+              - id: 3
+                name: "ito"
+                skill: "C"
+                status: "Working"
+  /clusters:
+    get:
+      tags: 
+        - "cluster"
+      operationId: "ListClusters"
+      produces:
+        - "application/json"
+        - "application/xml"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: '#/definitions/Cluster'
+      security:
+        - api_key: []
+    post:
+      tags: 
+        - "cluster"
+      operationId: "CreateCluster"
+      summary: "Create a cluster"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: '#/definitions/Cluster'
+      parameters:
+        - name: "body"
+          in: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Cluster'
+      security:
+        - api_key: []
+securityDefinitions:
+  petstore_auth:
+    type: "oauth2"
+    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+    flow: "implicit"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+security: []
+definitions:
+  Engineer:
+    type: "object"
+    required:
+    - "id"
+    - "name"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+        example: "sato"
+      skill:
+        type: "string"
+        description: "S is Super, A is Great, B is normal, C is fresh"
+        enum:
+        - "S"
+        - "A"
+        - "B"
+        - "C"
+      status:
+        type: "string"
+        description: "Empry or Working"
+        enum:
+        - "Empry"
+        - "Working"
+    xml:
+      name: "Engineer"
+      
+  Cluster:
+    type: "object"
+    properties:
+      name:
+        description: "name of the cluster"
+        type: "string"
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      message:
+        type: "string"
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
