@@ -9,7 +9,7 @@ export class HttpListService {
 
   constructor(private http: HttpClient) { }
 
-  private host: string = "http://localhost:8080/v2/engineer";
+  private host: string = "http://localhost:8080/engineer";
 
   private httpOptions = {
     headers: new HttpHeaders(),
