@@ -16,9 +16,10 @@ export class HttpListService {
     body: null
   }
 
-  public get(): Promise<object[]> {
-    // this.httpOptions.headers.append('Content-Type', 'application/json');
-    return this.http.get(this.host, this.httpOptions)
+  public getList(url: string): Promise<object[]> {
+    // this.httpOptions.headers = this.httpOptions.headers.append('Access-Control-Allow-Origin', '*');
+    console.log(this.httpOptions.headers);
+    return this.http.get(this.host + url, this.httpOptions)
     .toPromise()
     .then((res) => {
       const response: any = res;
@@ -29,4 +30,20 @@ export class HttpListService {
       return Promise.reject(err.message || err);
     });
   }
+
+  public getRow(url: string): Promise<object> {
+    // this.httpOptions.headers.append('Content-Type', 'application/json');
+    return this.http.get(this.host + url, this.httpOptions)
+    .toPromise()
+    .then((res) => {
+      const response: any = res;
+      console.log(res);
+      return response;
+    })
+    .catch(err => {
+      console.log('Error occured.', err);
+      return Promise.reject(err.message || err);
+    });
+  }
+
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,18 +15,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { LoginComponent } from 'frontend/src/app/libs/content/login/login.component';
-import { ListComponent } from 'frontend/src/app/libs/content/list/list.component';
+import { LoginComponent } from './libs/content/login/login.component';
+import { ListComponent } from './libs/content/list/list.component';
 
-import { HttpListService } from 'frontend/src/app/libs/service/http-list.service';
+import { HttpListService } from './libs/service/http-engineer.service';
+import { EngineerDetailComponent } from './libs/content/engineer-detail/engineer-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListComponent
+    ListComponent,
+    EngineerDetailComponent
   ],
   imports: [
     BrowserModule,
