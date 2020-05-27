@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HttpListService } from 'frontend/src/app/libs/service/http-list.service';
+import { HttpListService } from 'frontend/src/app/libs/service/http-engineer.service';
 
 @Component({
   selector: 'app-list',
@@ -9,14 +9,15 @@ import { HttpListService } from 'frontend/src/app/libs/service/http-list.service
 })
 export class ListComponent implements OnInit {
 
+  private url: string = '/list';
+
   constructor(private httpclient: HttpListService) { }
 
   displayedColumns: string[] = ['id', 'name', 'skill', 'status'];
-  // dataSource = ELEMENT_DATA;
   dataSource: object[];
 
   ngOnInit(): void {
-    this.httpclient.get()
+    this.httpclient.getList(this.url)
       .then(res => {
           this.dataSource = res;
         }
@@ -24,7 +25,6 @@ export class ListComponent implements OnInit {
       .catch(err => {
         console.log(err);
       });
-    
   }
 
 }
