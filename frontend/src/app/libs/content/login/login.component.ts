@@ -31,6 +31,6 @@ export class LoginComponent implements OnInit {
     console.log("password -> " + inputPassword);
 
     // go to list page
-    this.router.navigate(["list"]);
+    this.router.navigate(["engineer-list"]);
   }
 }
