@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,9 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './libs/content/login/login.component';
 import { ListComponent } from './libs/content/list/list.component';
-
-import { HttpListService } from './libs/service/http-engineer.service';
 import { EngineerDetailComponent } from './libs/content/engineer-detail/engineer-detail.component';
+
+import { EngineerApiService } from './libs/service/engineer-api.service';
+import { LoginListService } from './mock/login/login-list.service';
+import { EngineerDataService } from './mock/engineer/engineer-data.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { EngineerDetailComponent } from './libs/content/engineer-detail/engineer
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    // APIの数だけ記載（でもAPIの分だけ記載するのは良い方法とは思えない。もっと良い方法があるはず）
+    InMemoryWebApiModule.forRoot(LoginListService, {delay:100}),
+    InMemoryWebApiModule.forRoot(EngineerDataService, {delay:100}),
     AppRoutingModule,
     NgbModule,
     MatToolbarModule,
@@ -45,7 +51,7 @@ import { EngineerDetailComponent } from './libs/content/engineer-detail/engineer
     MatTableModule,
     BrowserAnimationsModule
   ],
-  providers: [HttpListService],
+  providers: [EngineerApiService, LoginListService, EngineerDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 
-import { HttpListService } from 'frontend/src/app/libs/service/http-engineer.service';
+import { EngineerApiService } from 'frontend/src/app/libs/service/engineer-api.service';
+
+interface EngineerStructure {
+  address: string;
+}
 
 @Component({
   selector: 'app-engineer-detail',
@@ -10,29 +14,24 @@ import { HttpListService } from 'frontend/src/app/libs/service/http-engineer.ser
 })
 export class EngineerDetailComponent implements OnInit {
 
-  private url: string = '/detail';
+  private url = 'engineerDetail';
 
   address: string;
 
   constructor(
     private route: ActivatedRoute,
-    private httpclient: HttpListService
+    private httpclient: EngineerApiService
   ) { }
 
   ngOnInit(): void {
     // 画面遷移指摘た時の選択したIDを取得
-    const id:string = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
 
     this.httpclient.getRow(this.url + '/' + id)
-    .then(res => {
-        console.log(res);
-        this.address = res[0].address;
-      }
-    )
-    .catch(err => {
-      console.log(err);
-    });
-
+      .subscribe(
+        (res: EngineerStructure) => { this.address = res.address; },
+        err => { console.error(err); }
+      );
   }
 
 }
