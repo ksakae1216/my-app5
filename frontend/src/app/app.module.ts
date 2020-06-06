@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+=======
+>>>>>>> master
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

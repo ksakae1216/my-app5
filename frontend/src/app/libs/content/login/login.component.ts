@@ -38,5 +38,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['engineer-list']);
     }
 
+<<<<<<< HEAD
+=======
+    // go to list page
+    this.router.navigate(["engineer-list"]);
+>>>>>>> master
   }
 }
