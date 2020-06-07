@@ -34,14 +34,11 @@ export class LoginComponent implements OnInit {
     console.log('password -> ' + inputPassword);
 
     if(this.loginApi.isAllowLogin(inputLoginId, inputPassword)) {
-      //ログイン成功、次のページへ遷移する
+      // ログイン成功、次のページへ遷移する
       this.router.navigate(['engineer-list']);
     }
 
-<<<<<<< HEAD
-=======
     // go to list page
     this.router.navigate(["engineer-list"]);
->>>>>>> master
   }
 }
