@@ -4,8 +4,8 @@ import { EngineerApiService } from 'frontend/src/app/libs/service/engineer-api.s
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  templateUrl: './engineer-list.component.html',
+  styleUrls: ['./engineer-list.component.scss']
 })
 export class ListComponent implements OnInit {
 
@@ -22,7 +22,6 @@ export class ListComponent implements OnInit {
         (res: any) => { this.dataSource = res; },
         err => { console.error(err); }
       );
-    // this.dataSource = this.httpclient.getList(this.url);
   }
 
 }
