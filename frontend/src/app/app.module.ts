@@ -19,7 +19,7 @@ import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './libs/content/login/login.component';
-import { ListComponent } from './libs/content/list/engineer-list.component';
+import { ListComponent } from './libs/content/engineer-list/engineer-list.component';
 import { EngineerDetailComponent } from './libs/content/engineer-detail/engineer-detail.component';
 
 import { EngineerApiService } from './libs/service/engineer-api.service';
