@@ -7,7 +7,7 @@ describe('Login', () => {
     loginPo.valid();
   });
 
-  it.only('display login', () => {
+  it('display login', () => {
     cy.matchImageSnapshot('login');
   });
 
