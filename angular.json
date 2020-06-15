@@ -266,6 +266,9 @@
             "devServerTarget": "testapli:serve"
           },
           "configurations": {
+            "mobile": {
+              "cypressConfig":"cypress.mobile.json"
+            },
             "production": {
               "devServerTarget": "testapli:serve:production"
             }
@@ -300,7 +303,7 @@
       }
     }
   },
-  "defaultProject": "my-app5",
+  "defaultProject": "testapli",
   "cli": {
     "analytics": "f62fff0b-d3e7-432f-a9fa-065a9d391103"
   }
