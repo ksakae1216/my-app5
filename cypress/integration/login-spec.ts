@@ -1,12 +1,14 @@
+import * as loginPo from '../support/po/login.po';
+
 describe('Login', () => {
 
   beforeEach(() => {
-    const baseUrl = 'http://localhost:4200';
-    cy.visit(baseUrl);
+    loginPo.navigatoTo();
+    loginPo.valid();
   });
 
   it('display login', () => {
-    cy.contains('TestApli(my-app5)');
+    cy.matchImageSnapshot('login');
   });
 
   it('do login', () => {
