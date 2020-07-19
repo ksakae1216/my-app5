@@ -9,59 +9,65 @@ export class EngineerDataService implements InMemoryDbService {
   private api: any = {
     engineerDataList: [
       {
-        "id": 1,
-        "name": "sato",
-        "skill": "A",
-        "status": "Working"
+        id: 1,
+        name: 'sato',
+        skill: 'A',
+        status: 'Working'
       },
       {
-        "id": 2,
-        "name": "kato",
-        "skill": "S",
-        "status": "Empty"
+        id: 2,
+        name: 'kato',
+        skill: 'S',
+        status: 'Empty'
       },
       {
-        "id": 3,
-        "name": "ito",
-        "skill": "C",
-        "status": "Working"
+        id: 3,
+        name: 'ito',
+        skill: 'C',
+        status: 'Working'
       }
     ],
     engineerDetail: [
       {
-        "address": "Tokyo",
-        "skill": "A",
-        "name": "sato",
-        "id": 1,
-        "skillDetail": "Angular, PostgreSQL",
-        "age": 30,
-        "status": "Working"
+        id: 1,
+        name: 'sato',
+        skill: 'A',
+        status: 'Working',
+        address: 'Tokyo',
+        age: 30,
+        skilldetail: 'Angular, PostgreSQL'
       },
       {
-        "id": 2,
-        "name": "kato",
-        "skill": "S",
-        "status": "Empty",
-        "address": "Saitama",
-        "age": 35,
-        "skillDetail": "React, Java, Python"
+        id: 2,
+        name: 'kato',
+        skill: 'S',
+        status: 'Empty',
+        address: 'Saitama',
+        age: 35,
+        skilldetail: 'React, Java, Python'
       },
       {
-        "id": 3,
-        "name": "ito",
-        "skill": "C",
-        "status": "Working",
-        "address": "Saitama",
-        "age": 35,
-        "skillDetail": "React, Java, Python"
+        id: 3,
+        name: 'ito',
+        skill: 'C',
+        status: 'Working',
+        address: 'Saitama',
+        age: 35,
+        skilldetail: 'React, Java, Python'
       }
     ]
-  }
+  };
+
   public createDb(): any {
+    // create mock data
     return this.api;
   }
 
-  public getEnginnerDataList(): any {
-    return this.api.engineerDataList;
+  public setEngineerDetailRow(
+    id: number, name: string, skill: string, status: string, address: string, age: number, skillDetail: string
+    ): boolean {
+
+    return true;
   }
+
 }

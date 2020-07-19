@@ -1,0 +1,26 @@
+.outer-frame {
+    display: grid;
+    place-items: center;
+}
+
+.detail-form {
+    margin-top: 50px;
+    padding-left: 100px;
+    width: 700px;
+}
+
+.detail-full-width {
+    width: 100%;
+}
+
+.detail-data-width-small {
+    width: 200px;
+}
+
+.detail-data-width-middle {
+    width: 300px;
+}
+
+.detail-data-width-large {
+    width: 600px;
+}
