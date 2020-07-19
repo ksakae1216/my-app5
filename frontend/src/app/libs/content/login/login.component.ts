@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl} from '@angular/forms';
 import { Router} from '@angular/router';
 import { LoginApiService } from 'frontend/src/app/libs/service/login-api.service';
@@ -33,12 +33,12 @@ export class LoginComponent implements OnInit {
     console.log('loginId -> ' + inputLoginId);
     console.log('password -> ' + inputPassword);
 
-    if(this.loginApi.isAllowLogin(inputLoginId, inputPassword)) {
+    if (this.loginApi.isAllowLogin(inputLoginId, inputPassword)) {
       // ログイン成功、次のページへ遷移する
       this.router.navigate(['engineer-list']);
     }
 
     // go to list page
-    this.router.navigate(["engineer-list"]);
+    this.router.navigate(['engineer-list']);
   }
 }

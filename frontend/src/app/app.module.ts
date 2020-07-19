@@ -37,9 +37,9 @@ import { EngineerDataService } from './mock/engineer/engineer-data.service';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // APIの数だけ記載（でもAPIの分だけ記載するのは良い方法とは思えない。もっと良い方法があるはず）
-    InMemoryWebApiModule.forRoot(LoginListService, {delay:100}),
-    InMemoryWebApiModule.forRoot(EngineerDataService, {delay:100}),
+    // Todo: APIの数だけ記載（でもAPIの分だけ記載するのは良い方法とは思えない。もっと良い方法があるはず）
+    InMemoryWebApiModule.forRoot(LoginListService, {delay:1000}),
+    InMemoryWebApiModule.forRoot(EngineerDataService, {delay:1000}),
     AppRoutingModule,
     NgbModule,
     MatToolbarModule,
