@@ -1,2 +1,56 @@
-<p>engineer-detail works!</p>
-<p>{{address}}</p>
+<!-- 
+    Todo: 
+    name is split lastname and firstname
+
+ -->
+<!-- データをテキストボックスで表示して、更新ボタン押下でcomponentに渡してmemoryのデータを更新 -->
+<div class="outer-frame">
+    <form class="detail-form" [formGroup]="engineerDetailFormGroup" (ngSubmit)="saveData()">
+        <div>
+            <mat-form-field class="detail-data-width-large">
+                <mat-label>ID</mat-label>
+                <input matInput placeholder="Developer ID" formControlName="id" value="{{id}}">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="detail-data-width-large">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Developer Name" formControlName="name" value="{{name}}">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="detail-data-width-large">
+                <mat-label>Skill</mat-label>
+                <input matInput placeholder="Developer Skill" formControlName="skill" value="{{skill}}">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="detail-data-width-large">
+                <mat-label>Status</mat-label>
+                <input matInput placeholder="Developer Status" formControlName="status" value="{{status}}">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="detail-data-width-large">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Developer Address" formControlName="address" value="{{address}}">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="detail-data-width-large">
+                <mat-label>Age</mat-label>
+                <input matInput placeholder="Developer Age" formControlName="age" value="{{age}}">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="detail-data-width-large">
+                <mat-label>SkillDetail</mat-label>
+                <input matInput placeholder="Developer SkillDetail" formControlName="skillDetail" value="{{skillDetail}}">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary">Primary</button>
+        </div>
+    </form>
+</div>
