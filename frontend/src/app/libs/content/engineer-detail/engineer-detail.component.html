@@ -9,43 +9,48 @@
         <div>
             <mat-form-field class="detail-data-width-large">
                 <mat-label>ID</mat-label>
-                <input matInput placeholder="Developer ID" formControlName="id" value="{{id}}">
+                <input matInput placeholder="Developer ID" formControlName="id" readonly>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="detail-data-width-large">
                 <mat-label>Name</mat-label>
-                <input matInput placeholder="Developer Name" formControlName="name" value="{{name}}">
+                <input matInput placeholder="Developer Name" formControlName="name">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="detail-data-width-large">
-                <mat-label>Skill</mat-label>
-                <input matInput placeholder="Developer Skill" formControlName="skill" value="{{skill}}">
+                <mat-label>Skill Dropbox</mat-label>
+                <mat-select formControlName="skill">
+                    <mat-option *ngFor="let skillRow of skills" [value]="skillRow.key">
+                        {{skillRow.value}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
+            
         </div>
         <div>
             <mat-form-field class="detail-data-width-large">
                 <mat-label>Status</mat-label>
-                <input matInput placeholder="Developer Status" formControlName="status" value="{{status}}">
+                <input matInput placeholder="Developer Status" formControlName="status">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="detail-data-width-large">
                 <mat-label>Address</mat-label>
-                <input matInput placeholder="Developer Address" formControlName="address" value="{{address}}">
+                <input matInput placeholder="Developer Address" formControlName="address">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="detail-data-width-large">
                 <mat-label>Age</mat-label>
-                <input matInput placeholder="Developer Age" formControlName="age" value="{{age}}">
+                <input matInput placeholder="Developer Age" formControlName="age">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="detail-data-width-large">
                 <mat-label>SkillDetail</mat-label>
-                <input matInput placeholder="Developer SkillDetail" formControlName="skillDetail" value="{{skillDetail}}">
+                <input matInput placeholder="Developer SkillDetail" formControlName="skilldetail">
             </mat-form-field>
         </div>
 

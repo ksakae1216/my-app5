@@ -31,7 +31,7 @@ export class EngineerDataService implements InMemoryDbService {
       {
         id: 1,
         name: 'sato',
-        skill: 'A',
+        skill: 'skill-high',
         status: 'Working',
         address: 'Tokyo',
         age: 30,
@@ -40,7 +40,7 @@ export class EngineerDataService implements InMemoryDbService {
       {
         id: 2,
         name: 'kato',
-        skill: 'S',
+        skill: 'skill-super',
         status: 'Empty',
         address: 'Saitama',
         age: 35,
@@ -49,10 +49,10 @@ export class EngineerDataService implements InMemoryDbService {
       {
         id: 3,
         name: 'ito',
-        skill: 'C',
+        skill: 'skill-beginner',
         status: 'Working',
-        address: 'Saitama',
-        age: 35,
+        address: 'Chiba',
+        age: 40,
         skilldetail: 'React, Java, Python'
       }
     ]
