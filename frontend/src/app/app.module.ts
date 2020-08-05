@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -49,6 +51,8 @@ import { EngineerDataService } from './mock/engineer/engineer-data.service';
     MatInputModule,
     MatFormFieldModule,
     MatTableModule,
+    MatSelectModule,
+    MatSnackBarModule,
     BrowserAnimationsModule
   ],
   providers: [EngineerApiService, LoginListService, EngineerDataService],
